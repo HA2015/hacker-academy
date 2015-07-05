@@ -1,11 +1,32 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+  <section class="user_info">
+    <h2>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h2>
+    <h5>
+      <% if @user.exec %>
+        Hacker Academy Executive
+      <% elsif @user.team_member %>
+        Hacker Academy Team Member
+      <% elsif @user.sponsor %>
+        Sponsor
+      <% else %>
+        Member 
+      <% end %>
+    </h5>
+    <h3 class="user_profile_headers">
+      Description
+    </h3>
+    <p>
+      <!-- Allow new lines in the text box to translate to html line breaks -->
+      <% if @user.description %>
+        <%= ((@user.description).gsub(/\n/, '<br/>')).html_safe %>
+      <% end %>
+    </p>
+    <h3 class="user_profile_headers">
+      Achievements
+    </h3>
+  </section>
 </div>

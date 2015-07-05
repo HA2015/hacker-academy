@@ -15,9 +15,9 @@
 
 /* global styling */
 
-  body {
-    padding-top: 5em;
-  }
+body {
+  padding-top: 7em;
+}
 
 /* typography */
 
@@ -43,13 +43,26 @@ p {
   font-size: 2.4em;
   font-family: miso, sans-serif;
   color: $deep-red;
+  border-color: #555555;
   letter-spacing: -1px;
-  padding-top: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   font-weight: bold;
   text-decoration: none;
   &:hover {
     color: $dark-red;
     text-decoration: none;
+  }
+}
+
+/* navbar */
+
+.navbar a {
+  margin-top: 5px !important;
+  margin-bottom: 2px !important;
+  padding-bottom: 0px !important;
+  &:hover {
+    color: $dark-red !important;
   }
 }
 
@@ -75,6 +88,14 @@ input {
   }
 }
 
+.btn {
+  background-color: $deep-red !important;
+  border-color: $dark-red !important;
+  &:hover {
+    background-color: $dark-red !important;
+  }
+}
+
 #session_remember_me {
   width: auto;
   margin-left: 0;
@@ -95,14 +116,14 @@ input {
   }
 }
 
-/* sidebar for users */
+/* users */
 
 aside {
   section.user_info {
-    margin-top: 20px;
+
   }
   section {
-    padding: 10px 0;
+    padding: 0 0;
     margin-top: 20px;
     &:first-child {
       border: 0;
@@ -130,6 +151,12 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+}
+
+.user_profile_headers {
+  margin-top: 1.5em;
+  clear: both;
+  color: $dark-red;
 }
 
 /* Users index */

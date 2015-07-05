@@ -1,7 +1,5 @@
 <% provide(:title, "About") %>
 
-<p>Find me in app/views/static_pages/about.html.erb</p>
-
 <h1>Hacker Academy</h1>
 
 <p>
@@ -41,9 +39,43 @@ C3 Hackathon
 Our largest event to date has been an annual Code, Collaborate, Create (C3) Hackathon. It is a weekend-long development event, organized in the same manner as the many popular Hackathons hosted across multiple universities every year. We are currently seeking partnership for the 2015-2016 Hackathon. 
 </p>
 
+<% @users = User.all %>
+
 <h1>Sponsors</h1>
 
+<ul class="users">
+  <% @users.each do |user| %>
+    <% if user.sponsor %>
+      <li>
+        <%= gravatar_for user, size: 50 %>
+        <%= link_to user.name, user %>
+        <h6>
+          Sponsor
+        </h6>
+        </li>
+    <% end %>
+  <% end %>
+</ul>
+
 <h1>The Team</h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <% if user.exec || user.team_member %>
+      <li>
+        <%= gravatar_for user, size: 50 %>
+        <%= link_to user.name, user %>
+        <h6>
+          <% if user.exec %>
+            Hacker Academy Executive
+          <% elsif user.team_member %>
+            Hacker Academy Team Member
+          <% end %>
+        </h6>
+        </li>
+    <% end %>
+  <% end %>
+</ul>
 
 <!-- To do: 
   Add is_exec and is_team_member to User model

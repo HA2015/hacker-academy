@@ -1,6 +1,17 @@
 <li>
   <%= gravatar_for user, size: 50 %>
   <%= link_to user.name, user %>
+  <h6>
+    <% if user.exec %>
+      Hacker Academy Executive
+    <% elsif user.team_member %>
+      Hacker Academy Team Member
+    <% elsif user.sponsor %>
+      Sponsor
+    <% else %>
+      Member 
+    <% end %>
+  </h6>
   <% if logged_in? && current_user.site_admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
