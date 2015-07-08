@@ -1,0 +1,31 @@
+<p>
+  <%= @event.name %>
+
+  <% if logged_in? && current_user.site_admin? %>
+    <%= link_to "Edit", edit_event_path %>
+      | <%= link_to "Delete", @event, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+  <% end %>
+</p>
+
+<p>
+  Description: 
+  <%= @event.desc %>
+</p>
+
+<p>
+  Date: 
+  <%= @event.date %>
+</p>
+
+<p>
+  Start Time:
+  <%= @event.start_time.localtime.strftime("%I:%M %Z") %>
+</p>
+
+<p>
+  Finish Time:
+  <%= @event.finish_time.localtime.strftime("%I:%M %Z") %>
+</p>
+
+
