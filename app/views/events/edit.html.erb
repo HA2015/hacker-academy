@@ -6,7 +6,7 @@
     <%= form_for(@event) do |f| %>
 
       <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, class: "form-control" %>
 
       <%= f.label :description %>
       <%= f.text_area :desc, class: "form-control" %>
@@ -14,17 +14,17 @@
       <%= f.label :date %>
       <%= f.date_select :date %>
 
-      <%= f.label :start_time_in_UTC_EDT_plus_4 %>
-      <%= f.time_select :start_time, 
-          ampm: true, 
-          ignore_date: true,
-          minute_step: 15 %> 
+        <%= f.label :start_time_in_UTC_EDT_plus_4 %>
+        <%= f.time_select :start_time, 
+            ampm: true, 
+            ignore_date: true,
+            minute_step: 15 %>    
 
-      <%= f.label :finish_time_in_UTC_EDT_plus_4 %>
-      <%= f.time_select :finish_time, 
-          ampm: true, 
-          ignore_date: true,
-          minute_step: 15 %> 
+        <%= f.label :finish_time_in_UTC_EDT_plus_4 %>
+        <%= f.time_select :finish_time, 
+            ampm: true, 
+            ignore_date: true,
+            minute_step: 15 %> 
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>

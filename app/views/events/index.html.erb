@@ -1,6 +1,8 @@
 <% provide(:title, 'Event Schedule') %>
 
-<%= link_to 'Create a New Event', 'events/new' %>
+<% if logged_in? && (current_user.sponsor? || current_user.site_admin?) %>
+  <%= link_to 'Create a New Event', 'events/new' %>
+<% end %>
 
 <ul>
   <%= render @events %>

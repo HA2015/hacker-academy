@@ -11,6 +11,11 @@ test_basic_user:
   email: tbu@example.com
   password_digest: <%= User.digest('password') %>
 
+test_sponsor_user:
+  name: Test Sponsor User
+  email: tsu@example.com
+  password_digest: <%= User.digest('password') %>
+
 test_exec1:
   name: Executive 1
   email: ex1@example.com

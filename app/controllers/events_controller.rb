@@ -1,4 +1,10 @@
 class EventsController < ApplicationController
+
+  # Before/after actions define prerequisites for certain controller actions
+  # Format: prerequisite (see private functions below), actions
+  before_action :admin_user,     only: [:new, :create, :edit, :update, :create, :destroy]
+  before_action :sponsor,        only: [:new, :create]
+
   def new
     @event = Event.new
   end
@@ -53,6 +59,17 @@ class EventsController < ApplicationController
     # Return the params hash but only with the permitted attributes
     def event_params
       params.require(:event).permit(:name, :date, :start_time, :finish_time, :desc)
+    end
+
+    def admin_user
+      redirect_to(root_url) unless (logged_in? && current_user.site_admin?)
+    end
+
+    # Could use refactoring to eliminate the check for admin
+    #  This check is here so that the before_action for sponsor does not redirect 
+    #  an admin 
+    def sponsor
+      redirect_to(root_url) unless (logged_in? && current_user.sponsor? || current_user.site_admin?)
     end
 
 end

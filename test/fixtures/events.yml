@@ -1,1 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sample_event:
+  name: Sample Event
+  date: 2015-01-01
+  start_time: "2000-01-01 20:00:00"
+  finish_time: "2000-01-01 21:00:00"
+  desc: 

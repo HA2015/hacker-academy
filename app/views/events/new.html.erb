@@ -1,6 +1,14 @@
 <% provide(:title, 'Create An Event') %>
 <h2>Create a new event</h2>
 
+<% if logged_in? && current_user.sponsor? %>
+  <p>
+    Thank you for taking the time to familiarize yourself with our site. Please take care 
+    creating your event, as sponsors are not allowed to edit existing events. If you need 
+    your event to be edited, please contact us at info@hackeracademy.org. 
+  <p>
+<% end %>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@event) do |f| %>
@@ -26,7 +34,9 @@
           ignore_date: true,
           minute_step: 15 %> 
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Create event", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
+
+
