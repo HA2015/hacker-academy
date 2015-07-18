@@ -1,12 +1,15 @@
 <% provide(:title, 'Event Schedule') %>
 
+<div id="calendar">
+
 <% if logged_in? && (current_user.sponsor? || current_user.site_admin?) %>
   <%= link_to 'Create a New Event', 'events/new' %>
 <% end %>
 
+<h2 class="red-header">Event List</h2>
 <ul>
   <%= render @events %>
 </ul>
 
-<!-- <div id="calendar"></div> -->
+
 

@@ -5,12 +5,12 @@ $(document).on('ready page:load', function(){
         dayClick: function() {
           var moment = $('#calendar').fullCalendar('getDate');
           if (confirm("Create a new event for this day?")) {
-            window.location.replace("events/new");
+            window.location = "events/new";
           }
         },
         events: '/events.json',
         eventClick: function(event) {
-          window.location.replace(event_path(event));
+          window.location.href(event_path(event));
         }
     });
 

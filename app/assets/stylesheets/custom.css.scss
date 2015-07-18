@@ -4,6 +4,7 @@
 /* color definitions */
   $deep-red: #cc0000;
   $dark-red: #aa0000;
+  $gray-medium-light: #eaeaea;
 
 /* mixins */
 
@@ -23,6 +24,10 @@ body {
 
 h1 {
   text-decoration: underline;
+}
+
+.red-header {
+  color: $dark-red;
 }
 
 p {
@@ -52,6 +57,33 @@ p {
   &:hover {
     color: $dark-red;
     text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-medium-light;
+  color: $gray-light;
+  a {
+    color: $deep-red;
+    &:hover {
+      color: $dark-red;
+      text-decoration: none;
+    }
+  }
+  small {
+    float: right;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
   }
 }
 
