@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   # Before/after actions define prerequisites for certain controller actions
   # Format: prerequisite (see private functions below), actions
   before_action :admin_user,     only: [:new, :create, :edit, :update, :create, :destroy]
-  before_action :sponsor,        only: [:new, :create]
 
   def new
     @event = Event.new
@@ -20,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.order(:date)
 
     respond_to do |format|
         format.html

@@ -4,7 +4,7 @@ $(document).on('ready page:load', function(){
         // put your options and callbacks here
         dayClick: function() {
           var moment = $('#calendar').fullCalendar('getDate');
-          if (confirm("Create a new event? You must be a sponsor or an admin to access this.")) {
+          if (confirm("Create a new event? You must be a site admin to access this.")) {
             window.location = "events/new";
           }
         },
