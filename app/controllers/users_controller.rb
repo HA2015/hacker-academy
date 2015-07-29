@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # If correctly saved, login. Otherwise, render the 'new' form again. 
     if @user.save
+      @user.update_attribute :level, 1
       log_in @user
       flash[:success] = "Welcome to Hacker Academy!"
       # Redirect to the user's profile
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.order(level: :desc)
   end
 
   def show

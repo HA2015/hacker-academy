@@ -1,0 +1,31 @@
+<% provide(:title, @achievement.name) %>
+<p>
+  <%= @achievement.name %>
+
+  <% if logged_in? && current_user.site_admin? %>
+    <%= link_to "Edit", edit_achievement_path %>
+      | <%= link_to "Delete", @achievement, method: :delete,
+                                    data: { confirm: "You sure?" } %>
+  <% end %>
+</p>
+<p>
+  <% if logged_in? && %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <% if !current_user.achievements.ids.include? @achievement.id %>
+          <%= form_for(@achievement, :url => { :action => "achieve" }, 
+                                     :html => { :method => :put } ) do |f| %>
+
+            <%= f.submit "Get achievement", class: "btn btn-primary" %>
+          <% end %>
+        <% else %>
+          <%= form_for(@achievement, :url => { :action => "surrender" }, 
+                                     :html => { :method => :put } ) do |f| %>
+
+            <%= f.submit "Remove achievement", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</p>

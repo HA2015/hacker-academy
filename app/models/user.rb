@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :achieveds
+  has_many :achievements, through: :achieveds
   attr_accessor :remember_token
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }
@@ -38,5 +40,39 @@ class User < ActiveRecord::Base
   def authenticated?(remember_token)
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  def update_level
+    new_level = 1
+    points = sum_points
+
+    if points >= 1200
+      new_level = 7
+    elsif points >= 900
+      new_level = 6
+    elsif points >= 650
+      new_level = 5
+    elsif points >= 400
+      new_level = 4
+    elsif points >= 200
+      new_level = 3
+    elsif points >= 100
+      new_level = 2
+    else
+      new_level = 1
+    end
+
+    if self.level != new_level
+      update_attribute(:level, new_level)
+    end
+  end
+
+  def sum_points
+    total_score = 0
+    self.achievements.each do |achievement|
+      total_score += achievement.value
+    end
+
+    return total_score
   end
 end

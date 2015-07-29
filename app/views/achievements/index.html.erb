@@ -1,0 +1,17 @@
+<% provide(:title, 'Achievements') %>
+
+<% if logged_in? && (current_user.site_admin?) %>
+  <%= link_to 'Create a New Achievement', 'achievements/new' %>
+<% end %>
+
+<h2 class="red-header">All Achievements</h2>
+<ul>
+  <%= render @achievements %>
+</ul>
+
+<br>
+
+<h6>
+  Achievements are managed as an honor system. Please only claim achievements that you have earned. 
+  Abusing this will result in the closing of your account.
+</h6>

@@ -202,7 +202,13 @@ aside {
   color: $dark-red;
 }
 
-/* Users index */
+.achievement_header {
+  margin-top: 1.5em;
+  clear: both;
+  font-size: 1.2em;
+}
+
+/* users index */
 
 .users {
   list-style: none;
@@ -224,7 +230,17 @@ aside {
   @include box_sizing;
 }
 
-/* Events index */
+/* events index */
 .event-list { 
   list-style: none;
+}
+
+/* achievements index */
+.achievement-list {
+  list-style: none;
+}
+
+.achievement-warning {
+  bottom: 0;
+  position: absolute;
 }

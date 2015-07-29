@@ -11,9 +11,9 @@
     <% elsif user.team_member %>
       Hacker Academy Team Member
     <% elsif user.sponsor %>
-      Sponsor
+      Sponsor, Level <%= user.level %>    
     <% else %>
-      Member 
+      Member, Level <%= user.level %>    
     <% end %>
   </h6>
 </li>

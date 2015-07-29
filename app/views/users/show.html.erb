@@ -12,8 +12,12 @@
         Hacker Academy Team Member
       <% elsif @user.sponsor %>
         Sponsor
+        <br>
+        Level <%= @user.level %> 
       <% else %>
-        Member 
+        Member
+        <br>
+        Level <%= @user.level %> 
       <% end %>
     </h5>
     <h3 class="user_profile_headers">
@@ -28,5 +32,16 @@
     <h3 class="user_profile_headers">
       Achievements
     </h3>
+    <% total_score = 0 %>
+    <li class=achievement-list >
+      <% @user.achievements.each do |achievement| %>
+        <%= link_to achievement.name, achievement %>
+         | Point value: <%= achievement.value %> 
+         <% total_score += achievement.value %>
+    </li>
+      <% end %>
+    <p>
+     Total Score = <%= total_score %>
+    </p>   
   </section>
 </div>

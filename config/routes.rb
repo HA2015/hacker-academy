@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :events
+  resources :achievements do
+    member do
+      put 'achieve'
+      put 'surrender'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

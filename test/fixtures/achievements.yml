@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sample_achievement:
+  name: Sponsor
+  description: "Congrats for being awesome!"
+  value: 1337
