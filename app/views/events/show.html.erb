@@ -22,10 +22,10 @@
 
 <p>
   Start Time:
-  <%= @event.start_time.localtime.strftime("%I:%M %Z") %>
+  <%= @event.start_time.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M %P %Z") %>
 </p>
 
 <p>
   Finish Time:
-  <%= @event.finish_time.localtime.strftime("%I:%M %Z") %>
+  <%= @event.finish_time.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M %P %Z") %>
 </p>
