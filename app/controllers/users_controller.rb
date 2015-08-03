@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     # If correctly saved, login. Otherwise, render the 'new' form again. 
     if @user.save
       @user.update_attribute :level, 1
+      @user.update_attribute :sponsor, true
       log_in @user
       flash[:success] = "Welcome to Hacker Academy!"
       # Redirect to the user's profile

@@ -1,8 +1,9 @@
 <% provide(:title, @event.name) %>
 
-<p>
+<h2 class=red-header>
   <%= @event.name %>
-
+</h2>
+<p>
   <% if logged_in? && current_user.site_admin? %>
     <%= link_to "Edit", edit_event_path %>
       | <%= link_to "Delete", @event, method: :delete,

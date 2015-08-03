@@ -1,12 +1,16 @@
 <% provide(:title, @achievement.name) %>
-<p>
+<h2 class=red-header>
   <%= @achievement.name %>
-
+</h2>
+<p>
   <% if logged_in? && current_user.site_admin? %>
     <%= link_to "Edit", edit_achievement_path %>
       | <%= link_to "Delete", @achievement, method: :delete,
                                     data: { confirm: "You sure?" } %>
   <% end %>
+</p>
+<p>
+  <%= @achievement.description %>
 </p>
 <p>
   <% if logged_in? && %>
