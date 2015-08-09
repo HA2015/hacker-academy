@@ -13,8 +13,8 @@
 
 <p>
   Description: 
-  <% if @event.description %>
-    <%= ((@event.description).gsub(/\n/, '<br/>')).html_safe %>
+  <% if @event.desc %>
+    <%= ((@event.desc).gsub(/\n/, '<br/>')).html_safe %>
   <% end %>
 </p>
 
