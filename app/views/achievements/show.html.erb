@@ -10,7 +10,9 @@
   <% end %>
 </p>
 <p>
-  <%= @achievement.description %>
+  <% if @achievement.description %>
+    <%= ((@achievement.description).gsub(/\n/, '<br/>')).html_safe %>
+  <% end %>
 </p>
 <p>
   <% if logged_in? && %>
