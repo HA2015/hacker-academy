@@ -1,6 +1,6 @@
 <li class="event-list">
   <%= link_to event.name, event %>
    | Day: <%= event.date %>
-   | Start: <%= event.start_time.localtime.strftime("%I:%M %P %Z") %> 
-   | End: <%= event.finish_time.localtime.strftime("%I:%M  %P %Z") %>
+   | Start: <%= event.start_time.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M %P %Z") %> 
+   | End: <%= event.finish_time.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M  %P %Z") %>
 </li>

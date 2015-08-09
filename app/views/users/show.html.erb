@@ -33,13 +33,15 @@
       Achievements
     </h3>
     <% total_score = 0 %>
-    <li class=achievement-list >
-      <% @user.achievements.each do |achievement| %>
-        <%= link_to achievement.name, achievement %>
-         | Point value: <%= achievement.value %> 
-         <% total_score += achievement.value %>
-    </li>
-      <% end %>
+    <ul class=achievement-list >
+      <li>
+        <% @user.achievements.each do |achievement| %>        
+          <%= link_to achievement.name, achievement %>
+           | Point value: <%= achievement.value %> 
+           <% total_score += achievement.value %>
+      </li>
+        <% end %>
+    </ul>
     <p>
      Total Score = <%= total_score %>
     </p>   
