@@ -60,6 +60,9 @@ class AchievementsController < ApplicationController
   def destroy
     @achievement = Achievement.find(params[:id])
     Achieved.where('(achievement_id= ?)', @achievement.id).destroy_all
+    User.all.each do |user|
+      user.update_level
+    end
     Achievement.find(params[:id]).destroy
     flash[:success] = "Achievement deleted"
     redirect_to action: 'index'
