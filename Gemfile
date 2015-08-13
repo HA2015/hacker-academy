@@ -13,10 +13,11 @@ gem 'jbuilder',     '2.2.3'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'sdoc',         '0.4.0', group: :doc
+gem 'rb-readline'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
-  gem 'byebug',      '3.4.0'
+#  gem 'byebug',      '3.4.0'
 # gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
 end
@@ -34,4 +35,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
