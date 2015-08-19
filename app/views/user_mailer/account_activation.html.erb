@@ -1,0 +1,10 @@
+<h1>Hacker Academy</h1>
+
+<p>Hi <%= @user.name %>,</p>
+
+<p>
+Welcome to the Hacker Academy! We're happy to have you. Head to the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>

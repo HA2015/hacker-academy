@@ -18,12 +18,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # If correctly saved, login. Otherwise, render the 'new' form again. 
     if @user.save
-      @user.update_attribute :level, 1
-      @user.update_attribute :sponsor, true
-      log_in @user
-      flash[:success] = "Welcome to Hacker Academy!"
-      # Redirect to the user's profile
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "Check your email to activate your account!"
+      redirect_to root_url
     else
       render 'new'
     end

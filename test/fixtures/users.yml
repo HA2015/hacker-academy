@@ -5,42 +5,58 @@ test_site_admin:
   email: tsa@example.com
   password_digest: <%= User.digest('password') %>
   site_admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 test_basic_user:
   name: Test Basic User
   email: tbu@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 test_sponsor_user:
   name: Test Sponsor User
   email: tsu@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 test_exec1:
   name: Executive 1
   email: ex1@example.com
   password_digest: <%= User.digest('password') %>
   site_admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 test_exec2:
   name: Executive 2
   email: ex2@example.com
   password_digest: <%= User.digest('password') %>
   site_admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 test_team_member1:
   name: Team Member 1
   email: tm1@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 test_team_member2:
   name: Team Member 2
   email: tm2@example.com
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 10.times do |n| %>
 user_<%= n %>:
   name:  <%= "User #{n}" %>
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>
