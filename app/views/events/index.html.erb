@@ -1,6 +1,6 @@
 <% provide(:title, 'Event Schedule') %>
 
-<div id="calendar">
+<div id="calendar"></div>
 
 <% if logged_in? && (current_user.site_admin?) %>
   <%= link_to 'Create a New Event', 'events/new' %>
@@ -10,6 +10,7 @@
 <ul>
   <%= render @events %>
 </ul>
+
 
 
 

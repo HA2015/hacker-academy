@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    # Order the users according to their level
     @users = User.order(level: :desc)
   end
 
