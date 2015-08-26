@@ -1,39 +1,39 @@
 <h2 class=red-header>
-  Welcome Hacker Academy Sponsors!
+  Welcome to Hacker Academy!
 </h2>
 <p>
-  Our website will deploy to the public on Wednesday, August 26, 2015. In the meantime, we are running in sponsor-mode. Please feel free to take a look around!
+  We're a group of students who are passionate about tech and software. We live by the hacker culture, which is all about promoting and practicing cleverness and creativity, having an inquisitive attitude, sharing knowledge, and hands-on learning. 
 </p>
 <h2 class=red-header>
-  Sponsor Events
+  What We Offer
 </h2>
+<!-- The links are to higher elements on the about page for more visibility on the topic of interest -->
 <p>
-  We are currently accepting sponsor events only. If you would like to have an event, please check out the <%= link_to "Event Schedule", events_path %></li>, and email us with a time that works for you. Typically, our NETtalks run 8:00-9:00 pm every Tuesday. This is the most convenient time to do a presentation. Programming competitions and similar events are held on the weekend. 
+  <a href="/about#NETtalks"> NETtalks </a> - Weekly talks on cool topics, new developments, and ways that technology affects our lives. 
+</p>
+<p>
+  <a href="/about#Programming_Competitions"> Programming Competitions </a> - Chances to crack your knuckles and rock some programming problems. 
+</p>
+<p>
+  <a href="/about#Hackathon"> Hackathon </a> - 24 hours+ of code-y goodness. 
 </p>
 <h2 class=red-header>
-  Sponsor Accounts
+  Website Features
 </h2>
 <p>
-  Sponsors are able to make their own accounts on our website, and we highly encourage that you do so. While the website is in sponsor-mode, there is no email-verification. Your email address is only associated with your gravatar (icon). Creating your own account would let you upload your own icon and write your own description. It is also possible that functionality that is restricted to account holders may be introduced later. If you choose not to create an account, one will be made for you on Sunday, August 30, 2015, but only Hacker Academy executives will have access to it. 
-</p>
-<br>
+  <%= link_to "Event Schedule", events_path %> - An easy-to-read calendar so that you can stay informed about our events. 
+</p> 
 <p>
-  Thank you once again for working with us! We're looking forward to a great year!
+  <%= link_to "Achievements", achievements_path %> - For attending events and doing some other awesome stuff. You manage your own achievements, when you've earned them. 
 </p>
 <p>
-  Sincerely,
+  <a href="http://localhost:3000/users/3">User Profiles</a> - Customize your profile with a gravatar and your own blurb. 
 </p>
-<% @users = User.all %>
-<ul class="users">
-  <% @users.each do |user| %>
-    <% if user.exec %>
-      <li>
-        <%= gravatar_for user, size: 50 %>
-        <%= link_to user.name, user %>
-        <h6>
-            Hacker Academy Executive
-        </h6>
-        </li>
-    <% end %>
-  <% end %>
-</ul>
+<h2 class=red-header>
+  Create an Account
+</h2>
+<p>
+  Well, what are you waiting for?!
+</p>
+
+<%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
