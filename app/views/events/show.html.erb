@@ -32,3 +32,8 @@
   Finish Time:
   <%= @event.finish_time.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M %P %Z") %>
 </p>
+
+<!-- Space buffer for the footer -->
+<% 18.times do %>
+<br>
+<% end %>
