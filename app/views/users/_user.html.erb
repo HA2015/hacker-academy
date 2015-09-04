@@ -18,7 +18,12 @@
       Not Activated
       <% end %>     
     <% else %>
-      Member, Level <%= user.level %>    
+      Member, 
+      <% if user.activated? %>
+      Level <%= user.level %>
+      <% else %>
+      Not Activated
+      <% end %> 
     <% end %>
   </h6>
 </li>
