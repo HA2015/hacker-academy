@@ -11,7 +11,12 @@
     <% elsif user.team_member %>
       Hacker Academy Team Member
     <% elsif user.sponsor %>
-      Sponsor, Level <%= user.level %>    
+      Sponsor, 
+      <% if user.activated? %>
+      Level <%= user.level %>
+      <% else %>
+      Not Activated
+      <% end %>     
     <% else %>
       Member, Level <%= user.level %>    
     <% end %>
