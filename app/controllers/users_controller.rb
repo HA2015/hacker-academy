@@ -27,8 +27,10 @@ class UsersController < ApplicationController
   end
 
   def index
-    # Order the users according to their level
-    @users = User.order(level: :desc)
+    # Order the users according to their level, putting users that are not activated at the bottom
+    @activated_users = User.where(activated: true).order(level: :desc)
+    @inactivated_users = User.where(activated: false).order(level: :desc)
+    @users = @activated_users + @inactivated_users
   end
 
   def show
