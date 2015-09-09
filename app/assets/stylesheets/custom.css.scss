@@ -14,6 +14,13 @@
   box-sizing:         border-box;
 }
 
+/* force font download */
+
+@font-face {
+  font-family: miso;
+  src: url(http://www.fontex.org/download/miso.otf);
+}
+
 /* global styling */
 
 body {
