@@ -6,11 +6,23 @@
   <%= link_to 'Create a New Event', 'events/new' %>
 <% end %>
 
+<% @upcoming_events, @past_events = @events.partition {|event| event.date > Time.now.strftime("%d/%m/%Y").to_date} %>
+
 <h2 class="red-header">Event List</h2>
+
+<h4> Upcoming Events </h4>
 <ul>
-  <%= render @events %>
+  <% if @upcoming_events %>
+    <%= render @upcoming_events %>
+  <% end %>
 </ul>
 
+<h4> Past Events </h4>
+<ul>
+  <% if @past_events %>
+    <%= render @past_events %>
+  <% end %>
+</ul>
 
 
 
