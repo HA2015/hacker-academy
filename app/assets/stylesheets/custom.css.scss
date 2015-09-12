@@ -18,10 +18,12 @@
 
 @font-face {
       font-family: 'miso';
-      src: url('fonts/miso.otf');
+      src: url('fonts/miso-webfont.eot');
+      src: url('fonts/miso-webfont.eot?iefix') format('eot'),
+           url('fonts/miso-webfont.woff') format('woff'),
+           url('fonts/miso-webfont.ttf') format('truetype');
       font-weight: normal;
-      font-style: normal;
-}
+      font-style: normal; }
 
 /* global styling */
 
