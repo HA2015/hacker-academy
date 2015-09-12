@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     @activated_users = User.where(activated: true).order(level: :desc)
     @inactivated_users = User.where(activated: false).order(level: :desc)
     @users = @activated_users + @inactivated_users
+    respond_to do |format|
+      format.html
+      format.csv { send_data @users.to_csv }
+      format.xls # { send_data @users.to_csv(col_sep: "\t") }
+    end
   end
 
   def show

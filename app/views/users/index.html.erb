@@ -1,5 +1,13 @@
 <% provide(:title, 'Members') %>
 
+<% if logged_in? && current_user.site_admin?%>
+    <p>
+      Download emails:
+      <%= link_to "CSV", users_path(format: "csv") %> |
+      <%= link_to "Excel", users_path(format: "xls") %>
+    </p>
+<% end %>
+
 <ul class="users">
   <%= render @users %>
 </ul>
