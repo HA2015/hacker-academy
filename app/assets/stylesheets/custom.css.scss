@@ -17,8 +17,10 @@
 /* force font download */
 
 @font-face {
-  font-family: miso;
-  src: url(http://www.fontex.org/get/miso.oft);
+      font-family: 'miso';
+      src: url('fonts/miso.otf');
+      font-weight: normal;
+      font-style: normal;
 }
 
 /* global styling */
@@ -57,7 +59,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 2.4em;
-  font-family: miso, sans-serif;
+  font-family: "miso", sans-serif;
   color: $deep-red;
   border-color: #555555;
   letter-spacing: -1px;
