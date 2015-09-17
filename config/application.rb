@@ -35,6 +35,6 @@ module HackerAcademy
     config.assets.precompile += %w( .svg .eot .woff .ttf )
 
     # Fix http -> https redirect issues
-    config.action_dispatch.default_headers['X-Frame-Options'] = "ALLOW-FROM https://www.hackeracademy.org/"
+    config.action_dispatch.default_headers.merge!({'X-Frame-Options' => 'ALLOWALL'})
   end
 end
