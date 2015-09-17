@@ -33,5 +33,8 @@ module HackerAcademy
     config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+    # Fix http -> https redirect issues
+    config.action_dispatch.default_headers['X-Frame-Options'] = "ALLOW-FROM https://www.hackeracademy.org/"
   end
 end
