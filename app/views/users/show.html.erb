@@ -39,7 +39,7 @@
       Achievements
     </h3>
     <% total_score = 0 %>
-    <ul class=achievement-list >
+    <ul class=basic-list >
       <% @user.achievements.each do |achievement| %>
         <li>        
           <%= link_to achievement.name, achievement %>

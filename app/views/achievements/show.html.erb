@@ -36,6 +36,19 @@
   <% end %>
 </p>
 
+<h2 class=red-header>Everyone who has this achievement</h2>
+
+<ul class=basic-list >
+  <% @achievement.users.each do |user| %>
+    <li>        
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+  <% if @achievement.users.count == 0 %>
+    No one has this achievement yet!
+  <% end %>
+</ul>
+
 <!-- Space buffer for the footer -->
 <% 23.times do %>
 <br>

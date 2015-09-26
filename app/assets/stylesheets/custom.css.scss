@@ -252,13 +252,19 @@ aside {
   list-style: none;
 }
 
-/* achievements index */
-.achievement-list {
-  list-style: none;
-  padding-left: 0;
-}
-
 .achievement-warning {
   bottom: 0;
   position: absolute;
+}
+
+/* misc */
+
+.centered-image {
+  clear: both;
+  text-align: center;
+}
+
+.basic-list {
+  list-style: none;
+  padding-left: 0;
 }
