@@ -1,0 +1,87 @@
+vim 01_hello_world
+
+bash
+bash 01_hello_world
+bash 01_hello_world > hello.txt
+bash 02_goodbye_world
+bash 02_goodbye_world > goodbye.txt
+bash 02_goodbye_world 1> goodbye.txt
+bash 02_goodbye_world 2> err.txt
+bash 02_goodbye_world 2>&1
+bash 02_goodbye_world >>goodbye_err.txt 2>&1
+
+#Can also use printf to print
+printf 'Hello'
+
+man man
+man cat
+cat *.sh
+cat *.sh > 03_combined.sh
+bash 03_combined.sh
+bash 03_combined.sh 2> /dev/null	(hides errors)
+
+#Piping - chains output into input of next command.
+cat *.txt | sort | uniq > dictionary.txt
+#Eg. sed -stream edit.  
+All:  cat words.txt | sed ***
+#Doublespace
+sed 'G'
+sed 'G;G'
+#Remove leading whitespace.
+sed 's/^[ ]*//'
+
+#Replace regex1 with regex2.  g is all instances.  Could also be 1, 4, etc (1st, 4th instances):
+#sed 's/regex1/regex2/g'
+e.g. sed 's\[aeio]\u\g'
+#.. Only if has word 'a':
+sed '\a \s\[aeio]\u\g'
+#printing first 2 lines
+sed 2q
+#printing lines matching regex (like grep regex words.txt)
+#sed -n '/regex/p'
+e.g. sed -n '/words/p'
+
+#Application:  List of words, and their occurrence counts, in Alice.
+cat alice.txt | sed 's/-/ /g' | sed 's/[,.!?";`'\'\*'():-]//g' | tr '[:upper:]' '[:lower:]' | tr ' ' '\n' | sort | uniq -c > out.txt
+
+#Variables
+HI="Hello World"
+echo HI
+echo $HI
+
+#Doing arithmetic - must be with let keyword, or within arithmetic context (( )).
+a=1
+a+=1
+echo $a
+(( a+=1 ))
+echo $a
+
+#Similarly, square brackets are logic test operators.
+#If/Else - spacing matters
+if [ "foo" = "foo" ]; then echo True; else echo False; fi
+#Conditionals:  =, !=, -lt, -gt -le, -ge
+
+#Loops-for
+for i in `seq 1 10`;
+do echo $i;
+done
+
+#Loops-while
+i=0
+while [ $i -lt 5 ]; do echo $i; (( i+=1 )); done
+
+#Functions
+function e { echo $1; }
+#Do Alice function
+..
+
+=============
+
+Switch over to windows - couldn't install ffmpeg / imagemagick  
+ffmpeg -i video.mp4 -r 1 1/frame%05d.png
+convert 1/frame*.png 1.gif
+ffmpeg -i video.mp4 -r 10 -ss 42 -t 4 2.mp4
+ffmpeg -i video.mp4 -r 10 -ss 42 -t 4 2.gif
+ffmpeg -i video.mp4 -r 10 -ss 42 -t 4 2/frame%05d.png
+convert 2/frame*.png 2.gif
+
