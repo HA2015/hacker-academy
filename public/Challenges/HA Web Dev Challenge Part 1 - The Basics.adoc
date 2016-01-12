@@ -1,0 +1,25 @@
+= HA Web Dev Challenge Part 1 - The Basics
+
+This semester of HA challenges will consist of standalone segments of the upcoming HA Super Summer Challenge. In the Super Summer Challenge, the challenge is to complete The Odin Project, a course on Web Development.
+
+The Odin Project focused on Ruby on Rails, but it also teaches many important and universal topics such as:
+
+* How the web works
+* HTML/CSS
+* Javascript
+* Software testing
+* Git
+* Data structures and algorithms
+* The MVC model (models, views, controllers)
+* Databases and SQL
+* and more
+
+http://www.theodinproject.com/home
+
+== The Basics
+
+In this challenge, you will complete the section of Web Development 101 called The Basics.
+
+== Reward
+
+100 points!
