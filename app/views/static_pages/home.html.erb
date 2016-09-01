@@ -29,6 +29,8 @@
 <p>
   <a href="/users/1">User Profiles</a> - Customize your profile with a gravatar and your own blurb. 
 </p>
+
+<% if !logged_in? %>
 <h2 class=red-header>
   Create an Account
 </h2>
@@ -37,3 +39,4 @@
 </p>
 
 <%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
+<% end %>

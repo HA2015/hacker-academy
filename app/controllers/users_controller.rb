@@ -71,7 +71,7 @@ class UsersController < ApplicationController
     # Return the params hash but only with the permitted attributes
     def user_params
       params.require(:user).permit(:name, :description, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :discipline, :graduating)
     end
 
     def logged_in_user

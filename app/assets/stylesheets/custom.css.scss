@@ -132,6 +132,10 @@ input {
   height: auto !important;
 }
 
+.invisible{
+  display: none;
+}
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
@@ -139,6 +143,10 @@ input {
     margin-left: 20px;
     font-weight: normal;
   }
+}
+
+.signup {
+  width: 5% !important;
 }
 
 .btn {
