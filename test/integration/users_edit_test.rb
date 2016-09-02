@@ -13,7 +13,11 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), user: { name:  "",
                                     email: "foo@invalid",
                                     password:              "foo",
-                                    password_confirmation: "bar" }
+                                    password_confirmation: "bar",
+                                    discipline: "EngSci",
+                                    graduating: "1T9",
+                                    
+    }
     assert_template 'users/edit'
   end
 
@@ -26,7 +30,10 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), user: { name:  name,
                                     email: email,
                                     password:              "",
-                                    password_confirmation: "" }
+                                    password_confirmation: "",
+                                    discipline: "EngSci",
+                                    graduating: "1T9",
+    }
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload

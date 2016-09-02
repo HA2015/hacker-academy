@@ -1,17 +1,32 @@
 <% provide(:title, 'Sign up') %>
-<h2>Sign up</h2>
+
+<h2 class="text-center">Sign up</h2>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
-
+ 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
-
+      
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
+      <input type="checkbox" value="" class="signup"> <label> I am not an engineer</label>
 
+      <div class="row " id="engineer_field" >
+        <div class="col-md-6">
+          <%= f.label :discipline %>
+          <%= f.select :discipline, [nil, 'ChemE', 'CivE', 'MSE', 'MIE', 'EngSci', 'ECE'], class: "form_control" %>
+        </div>
+        
+        <div class="col-md-6">
+          <%= f.label :graduating %>
+          <%= f.select :graduating, [nil,'1T7', '1T8', '1T9', '2T0'], class: "form_control"%>
+        </div>
+      </div>
+      
+      <br>
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 

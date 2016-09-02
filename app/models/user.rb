@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   # allow_nil is for testing purposes, has_secure_password will prevent a user from signing up with
   #   a blank password field
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-
+  validates_presence_of :discipline, :if => :graduating?
+  validates_presence_of :graduating, :if => :discipline?
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
