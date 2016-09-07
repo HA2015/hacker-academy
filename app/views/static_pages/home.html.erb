@@ -31,12 +31,14 @@
 </p>
 
 <% if !logged_in? %>
-<h2 class=red-header>
-  Create an Account
-</h2>
-<p>
-  Well, what are you waiting for?!
-</p>
 
-<%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
+  <h2 class=red-header>
+    Create an Account
+  </h2>
+  <p>
+    Well, what are you waiting for?!
+  </p>
+  
+  <%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
+
 <% end %>

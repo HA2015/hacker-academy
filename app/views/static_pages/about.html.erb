@@ -15,13 +15,15 @@
 </p>
 <!-- Related to the following comment on home.html.erb -->
 <!-- The links are to higher elements on the about page for more visibility on the topic of interest -->
+
+<div class="container well">
 <h2 class="red-header" id="NETtalks">Events</h2>
 
 <h3 id="Programming_Competitions">
   NETtalks - News, Engineering, Technology
 </h3>
 <p>
-  NETtalks are weekly presentations on any topic relevant to HA. We showcase industry trends, cool projects, and other interesting topics to engage and inspire students. Previous topics have included Machine Learning and Data Mining, Terminal Usage, Computer Cooling, Overclocking, Version Control, iOS Development, Ruby on Rails, Game Development, Agile. For a more extensive list, past topics can be found on our past website
+  NETtalks are presentations delivered by professors and figures in the programming sector. We showcase industry trends, cool projects, and other interesting topics to engage and inspire students. We strive to Previous topics have included Machine Learning and Data Mining, Terminal Usage, Computer Cooling, Overclocking, Version Control, iOS Development, Ruby on Rails, Game Development, Agile. For a more extensive list, past topics can be found on our past website
   <a href=http://hackeracademy2011.herokuapp.com/schedule>here</a>. 
 </p>
 <p>
@@ -29,26 +31,28 @@
   <%= link_to "Event Schedule", events_path %></li>. 
   Send us an email if you are interested in doing a talk!
 </p>
-
+<h3>
+  Tech Tutorials
+</h3>
+<p>
+  As a new initiative for the 2016-2017 year, we will host hands-on tutorials on topics relevant to Hacker Academy. 
+  Each workshop will be focused on helping you build your web development and coding portfolio. You can expect to walk out from each with a new project under your belt. 
+  Topics include: Deploying your own online resume, making online board games, learning API's, and more! 
+</p>
 <h3 id="Hackathon"> 
   Programming Competitions
 </h3>
 <p>
   We host programming competitions a few times per semester to promote interest in coding. Typically, they consist of general programming questions such as maze traversal, string parsing, and the like. Occasionally, they are more unique; for example, a Scalatron battle.
 </p>
-<h3>
-  Tech Tutorials
-</h3>
-<p>
-  As a new initiative for the 2015-2016 year, we will host hands-on tutorials on topics relevant to Hacker Academy. 
-</p>
+
 <h3>
   C3 Hackathon
 </h3>
 <p>
   Our largest event to date has been an annual Code, Collaborate, Create (C3) Hackathon. It is a weekend-long development event, organized in the same manner as the many popular Hackathons hosted across multiple universities every year. 
 </p>
-
+</div>
 <% @users = User.all %>
 
 <h2 class="red-header">Sponsors</h2>
