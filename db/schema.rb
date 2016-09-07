@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818022144) do
+ActiveRecord::Schema.define(version: 20160907151834) do
 
   create_table "achieveds", force: :cascade do |t|
     t.integer  "user_id"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20160818022144) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                                                                                                                           null: false
+    t.datetime "updated_at",                                                                                                                           null: false
     t.string   "name"
     t.string   "email"
     t.string   "remember_digest"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160818022144) do
     t.boolean  "team_member",       default: false
     t.boolean  "exec",              default: false
     t.string   "password_digest"
-    t.text     "description"
+    t.text     "description",       default: "Welcome! Change your profile picture and your avatar by clicking Account > Edit in the topright corner"
     t.boolean  "sponsor",           default: false
     t.integer  "level"
     t.string   "activation_digest"
