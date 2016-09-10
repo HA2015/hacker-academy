@@ -43,12 +43,19 @@ h3 {
   text-decoration: underline;
 }
 
+.simpleheader {
+  text-decoration: none !important;
+  font-weight: bolder;
+  text-align: center;
+}
+
 .red-header {
   color: $dark-red;
+  font-weight: 800;
 }
 
 p {
-  font-size: 1.4em;
+  font-size: 1.17em;
 }
 
 .quotation {
@@ -182,7 +189,6 @@ input {
     color: $state-danger-text;
   }
 }
-
 
 /* users */
 

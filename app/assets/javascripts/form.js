@@ -1,4 +1,6 @@
 $(document).on('page:change', function() {
+    $('#newaccount').prop('disabled', true);
+    
     $(".signup").on("click",function(){
       if($("#engineer_field").hasClass("invisible"))
       {
@@ -9,4 +11,10 @@ $(document).on('page:change', function() {
         $('select').prop('selectedIndex', 0);
       }
     });
+    
+     $('#acceptterms').click(function() {
+       $('#newaccount').prop('disabled', !$('#acceptterms').prop('checked'));
+    });
+    
+    
 });

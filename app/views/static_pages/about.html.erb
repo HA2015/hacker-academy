@@ -1,6 +1,6 @@
 <% provide(:title, "About") %>
 
-<h2 class="red-header">Hacker Academy</h2>
+<h2 class="red-header simpleheader">Hacker Academy</h2>
 
 <p>
   Hacker Academy (HA) is a student-run club at the University of Toronto. We strive to provide an environment in which students can develop and engage their interests in technological developments, programming, and the role of technology, particularly software, in our lives and society at large. We live by the hacker culture, which is all about promoting and practicing cleverness and creativity, having an inquisitive attitude, sharing knowledge, and hands-on learning. 
@@ -17,9 +17,9 @@
 <!-- The links are to higher elements on the about page for more visibility on the topic of interest -->
 
 <div class="container well">
-<h2 class="red-header" id="NETtalks">Events</h2>
+<h2 class="red-header simpleheader" id="NETtalks">Events</h2>
 
-<h3 id="Programming_Competitions">
+<h3 class="simpleheader" id="Programming_Competitions">
   NETtalks - News, Engineering, Technology
 </h3>
 <p>
@@ -33,7 +33,7 @@
   <%= link_to "Event Schedule", events_path %></li>. 
   Send us an email if you are interested in doing a talk!
 </p>
-<h3 id="workshops">
+<h3 class="simpleheader" id="workshops">
   Tech Tutorials - Build your portfolio
 </h3>
 <p>
@@ -41,14 +41,14 @@
   Each workshop will be focused on helping you build your web development and coding portfolio. You can expect to walk out from each with a new project under your belt to show employers. <br>
   Topics include: Deploying your own online resume, making online board games, learning API's, and more! 
 </p>
-<h3 id="Hackathon"> 
+<h3 class="simpleheader" id="Hackathon"> 
   Programming Competitions
 </h3>
 <p>
   We host programming competitions a few times per semester to promote interest in coding. Typically, they consist of general programming questions such as maze traversal, string parsing, and the like. Occasionally, they are more unique; for example, a Scalatron battle.
 </p>
 
-<h3>
+<h3 class="simpleheader">
   C3 Hackathon
 </h3>
 <p>
@@ -57,7 +57,7 @@
 </div>
 <% @users = User.all %>
 
-<h2 class="red-header">Sponsors</h2>
+<h2 class="red-header simpleheader">Sponsors</h2>
 
 <ul class="users">
   <% @users.each do |user| %>
@@ -78,7 +78,7 @@
   <a href="Hacker Academy Sponsorship Package 2015.pdf">2015 Sponsorship Package</a>
 </p>
 
-<h2 class="red-header">The Team</h2>
+<h2 class="red-header simpleheader">The Team</h2>
 
 <ul class="users">
   <% @users.each do |user| %>
@@ -102,7 +102,7 @@
   Want to find out more about helping out with Hacker Academy? Learn about being a team member on our <a href="https://drive.google.com/drive/folders/0Bykbm0-1j0lAYnpHQVdmQTZCSkU">google drive</a>. Our club planning is (almost) completely transparent to all. 
 </p>
 
-<h2 class="red-header">Contact</h2>
+<h2 class="red-header simpleheader">Contact</h2>
 
 <p>
   For all inquiries, please reach us at info@hackeracademy.org

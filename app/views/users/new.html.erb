@@ -32,8 +32,13 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <div class="row">
+        <div class="col-xs-2"><input type="checkbox" value="" id="acceptterms"></div>
+        <div class="col-xs-10"> <label> "By creating an account, I am agreeing to recieve monthly promotional newsletters and NETtalks. My information will not be disclosed to anyone else other than Hacker Academy and Associates, University of Toronto, ON, Canada"
+</label></div>
+      </div>
+      <br>
+      <%= f.submit "Create my account", class: "btn btn-primary", id:"newaccount" %>
     <% end %>
   </div>
 </div>
