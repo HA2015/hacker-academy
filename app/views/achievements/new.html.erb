@@ -13,7 +13,10 @@
 
       <%= f.label :value %>
       <%= f.text_field :value, class: 'form-control' %>
-
+      
+      <p>Leave password blank for universal achievements</p>
+      <%= f.label :password %>
+      <%= f.text_field :password, class: 'form-control' %>
       <%= f.submit "Create achievement", class: "btn btn-primary" %>
     <% end %>
   </div>
