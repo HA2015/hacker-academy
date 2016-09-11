@@ -43,10 +43,16 @@ class AchievementsController < ApplicationController
 
   def achieve
     @achievement = Achievement.find(params[:id]) 
-    Achieved.create(user_id: current_user.id, achievement_id: @achievement.id)
-    current_user.update_level
-    flash[:success] = "Achievement acquired!"
-    redirect_to action: 'index'
+    
+    if @achievement[:password] == params[:achievement][:password]
+      Achieved.create(user_id: current_user.id, achievement_id: @achievement.id)
+      current_user.update_level
+      flash[:success] = "Achievement acquired!"
+      redirect_to action: 'index'
+    else 
+      flash[:danger] = "Wrong password"
+      redirect_to action: 'index'
+    end
   end
 
   def surrender
@@ -73,7 +79,7 @@ class AchievementsController < ApplicationController
 
     # Return the params hash but only with the permitted attributes
     def achievement_params
-      params.require(:achievement).permit(:name, :description, :value)
+      params.require(:achievement).permit(:name, :description, :value, :password)
     end
 
     def admin_user

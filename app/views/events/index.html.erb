@@ -1,28 +1,31 @@
 <% provide(:title, 'Event Schedule') %>
-
-<div id="calendar"></div>
-
-<% if logged_in? && (current_user.site_admin?) %>
-  <%= link_to 'Create a New Event', 'events/new' %>
-<% end %>
-
-<% @upcoming_events, @past_events = @events.partition {|event| event.date > Time.now.strftime("%d/%m/%Y").to_date} %>
-
-<h2 class="red-header">Event List</h2>
-
-<h4> Upcoming Events </h4>
-<ul>
-  <% if @upcoming_events %>
-    <%= render @upcoming_events %>
-  <% end %>
-</ul>
-
-<h4> Past Events </h4>
-<ul>
-  <% if @past_events %>
-    <%= render @past_events %>
-  <% end %>
-</ul>
-
+<div class="row">
+  <div class="col-lg-8">
+    <div id="calendar"></div>
+  </div>
+  <div class="col-lg-4">
+    <% if logged_in? && (current_user.site_admin?) %>
+      <%= link_to 'Create a New Event', 'events/new' %>
+    <% end %>
+    
+    <% @upcoming_events, @past_events = @events.partition {|event| event.date > Time.now.strftime("%d/%m/%Y").to_date} %>
+    
+    <h2 class="red-header">Event List</h2>
+    
+    <h4> Upcoming Events </h4>
+    <ul>
+      <% if @upcoming_events %>
+        <%= render @upcoming_events %>
+      <% end %>
+    </ul>
+    
+    <h4> Past Events </h4>
+    <ul>
+      <% if @past_events %>
+        <%= render @past_events %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 

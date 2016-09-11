@@ -21,7 +21,10 @@
         <% if !current_user.achievements.ids.include? @achievement.id %>
           <%= form_for(@achievement, :url => { :action => "achieve" }, 
                                      :html => { :method => :put } ) do |f| %>
-
+            <% if !@achievement.password.blank? %>
+              <%= f.label :password %>
+              <%= f.text_field :password, class: "form-control", value: ""%>
+            <% end %>
             <%= f.submit "Get achievement", class: "btn btn-primary" %>
           <% end %>
         <% else %>
