@@ -4,11 +4,17 @@
   <%= link_to 'Create a New Achievement', 'achievements/new' %>
 <% end %>
 
-<h2 class="red-header">All Achievements</h2>
+<% @new_achievements, @past_achievements = @achievements.partition {|achievement| achievement.updated_at > "2016-09-01 00:36:24 +0000".to_date} %>
+
+<h2 class="red-header">Achievements 2016</h2>
 <ul>
-  <%= render @achievements %>
+  <%= render @new_achievements %>
 </ul>
 
+<h2 class="red-header">Legacy achievements</h2>
+<ul>
+  <%= render @past_achievements %>
+</ul>
 <br>
 
 <h6>
