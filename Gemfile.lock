@@ -241,4 +241,4 @@ DEPENDENCIES
   uglifier (= 2.5.3)
 
 BUNDLED WITH
-   1.12.5
+   1.13.0
