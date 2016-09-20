@@ -34,7 +34,8 @@ class UsersController < ApplicationController
     #retrieve exec, sponsors and members
     @exec_users = User.where(exec: true).order(level: :desc)
     @sponsor_users = User.where(sponsor: true).order(level: :desc)
-    @users = User.where(["exec = :exec and sponsor = :sponsor", { exec: false, sponsor: false}]).order(level: :desc)
+    @inactivated_users = User.where(activated: false).order(level: :desc)
+    @users = User.where(["exec = :exec and sponsor = :sponsor", { exec: false, sponsor: false}]).order(level: :desc) + @inactivated_users
     respond_to do |format|
       format.html
       format.csv { send_data @users.to_csv }
