@@ -9,9 +9,29 @@
     </p>
 <% end %>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+<!-- list execs -->
+	<div class="row">
+		<div class="col-md-4 col-sm-4">
+			<h2>
+				Executive Team
+			</h2>
+			<%= render @exec_users %>
+		</div>
+		<div class="col-md-4 col-sm-4">	
+			<!-- list sponsors -->
+			<h2>
+				Our Sponsors
+			</h2>
+			<%= render @sponsor_users %>
+		</div>
+		<div class="col-md-4 col-sm-4">	
+			<!-- list members -->
+			<h2>
+				Club Members
+			</h2>
+  			<%= render @users %>
+		</div>	
+	</div>
 
 <!-- Space buffer for the footer -->
 <% 25.times do %>
