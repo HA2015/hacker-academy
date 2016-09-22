@@ -5,6 +5,10 @@
       <%= gravatar_for @user%>
       <%= @user.name %>
     </h2>
+    <% if logged_in? && current_user.site_admin? && !current_user?(@user) %>
+    | <%= link_to "delete", @user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    <% end %>
     <h5>
       <% if @user.exec %>
         Hacker Academy Executive

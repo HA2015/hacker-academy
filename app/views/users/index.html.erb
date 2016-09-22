@@ -1,6 +1,7 @@
 <% provide(:title, 'Members') %>
 
 <% if logged_in? && current_user.site_admin?%>
+    There are <%= User.count %> users.
     <p>
       Download emails:
       <%= link_to "CSV", users_path(format: "csv") %> |
